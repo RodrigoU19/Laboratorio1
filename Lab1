@@ -1,0 +1,94 @@
+package principal;
+
+import java.util.Scanner;
+
+
+public class Principal {
+
+    public static int indiceCarrosMBarato(Carros vehiculos[]){
+    float precio;
+    int indice=0;
+    
+    precio=vehiculos[0].getPrecio();
+    for(int i=1;i<vehiculos.length;i++){
+        if(vehiculos[i].getPrecio()<precio){
+           precio=vehiculos[i].getPrecio();
+           indice=i;
+        }
+    }
+    return indice;
+    }
+    
+    public static void main(String[] args) {
+       Scanner entrada= new Scanner(System.in);
+       String marca,modelo;
+       float precio;
+       int numCarros,indiceBarato;
+       
+       System.out.println("Bienvenido!"+"/n"+"Este programa calcula el precio del Auto más barato");
+       System.out.println("Este programa calcula el precio del Auto más barato");
+       System.out.print("Digite la cantidad de vehiculos: ");
+       numCarros=entrada.nextInt();
+       
+       Carros vehiculos[]= new Carros[numCarros];
+       
+       for(int i=0;i<numCarros;i++){
+           entrada.nextLine();
+           System.out.println("Digite las caracteristicas del Carro "+(i+1)+":");
+           System.out.print("Introdusca la Marca: ");
+           marca=entrada.nextLine();
+           System.out.print("Introdusca el Modelo: ");
+           modelo=entrada.nextLine();
+           System.out.print("Introdusca el precio: ");
+           precio=entrada.nextFloat();
+           
+           vehiculos[i]=new Carros(marca ,modelo ,precio);
+       
+       }
+       indiceBarato=indiceCarrosMBarato(vehiculos);
+       System.out.println("El coche mas barato es: ");
+       System.out.println(vehiculos[indiceBarato].mostrarDatos());
+       
+    Scanner entrada2= new Scanner(System.in);
+       String marcaMoto,modeloMoto;
+       float precioMoto;
+       int numMotos,indiceBarata;
+       
+       System.out.print("Digite la cantidad de Motos: ");
+       numMotos=entrada2.nextInt();
+       
+       Motos Motocicletas[]= new Motos[numMotos];
+       
+       for(int i=0;i<numMotos;i++){
+           entrada2.nextLine();
+           System.out.println("Digite las caracteristicas de la Moto "+(i+1)+":");
+           System.out.print("Introdusca la Marca: ");
+           marcaMoto=entrada2.nextLine();
+           System.out.print("Introdusca el Modelo: ");
+           modeloMoto=entrada2.nextLine();
+           System.out.print("Introdusca el precio: ");
+           precioMoto=entrada2.nextFloat();
+           
+           Motocicletas[i]=new Motos(marcaMoto ,modeloMoto ,precioMoto);
+           
+       }
+       indiceBarata=indiceMotosBarata(Motocicletas);
+       System.out.println("La moto mas barato es: ");
+       System.out.println(Motocicletas[indiceBarata].datosMotos());
+    }
+    
+    public static int indiceMotosBarata(Motos Motocicletas[]){
+    float precio;
+    int indice=0;
+    
+    precio=Motocicletas[0].getPrecioMoto();
+    for(int i=1;i<Motocicletas.length;i++){
+        if(Motocicletas[i].getPrecioMoto()<precio){
+           precio=Motocicletas[i].getPrecioMoto();
+           indice=i;
+        }
+    }
+    return indice;
+    }
+    
+}
