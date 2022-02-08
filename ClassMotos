@@ -1,0 +1,39 @@
+package principal;
+public class Motos {
+    private String marcaMoto;
+    private String modeloMoto;
+    private float precioMoto;
+
+    //Metodo Constructor:
+    public Motos(String marcaMoto, String modeloMoto, float precioMoto) {
+        this.marcaMoto = marcaMoto;
+        this.modeloMoto = modeloMoto;
+        this.precioMoto = precioMoto;
+    }
+
+    public String getMarcaMoto() {
+        return marcaMoto;
+    }
+
+    public void setMarcaMoto(String marcaMoto) {
+        this.marcaMoto = marcaMoto;
+    }
+
+    public String getModeloMoto() {
+        return modeloMoto;
+    }
+
+    public void setModeloMoto(String modeloMoto) {
+        this.modeloMoto = modeloMoto;
+    }
+
+    public float getPrecioMoto() {
+        return precioMoto;
+    }
+
+    public String datosMotos(){
+    return "Marca: "+marcaMoto+"/n" +"Modelo: "+modeloMoto+"/n " +"Precio: "+"$"+precioMoto;
+    }
+    
+    
+}
