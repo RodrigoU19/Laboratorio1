@@ -2,13 +2,17 @@ package principal;
 public class Motos {
     private String marcaMoto;
     private String modeloMoto;
+    private String colorMoto;
     private float precioMoto;
+    private int anhoMoto;
 
     //Metodo Constructor:
-    public Motos(String marcaMoto, String modeloMoto, float precioMoto) {
+    public Motos(String marcaMoto, String modeloMoto,String colorMoto,int anhoMoto, float precioMoto) {
         this.marcaMoto = marcaMoto;
         this.modeloMoto = modeloMoto;
         this.precioMoto = precioMoto;
+        this.anhoMoto=anhoMoto;
+        this.colorMoto=colorMoto;
     }
 
     public String getMarcaMoto() {
@@ -31,8 +35,26 @@ public class Motos {
         return precioMoto;
     }
 
+    public String getColorMoto() {
+        return colorMoto;
+    }
+
+    public void setColorMoto(String colorMoto) {
+        this.colorMoto = colorMoto;
+    }
+
+    public int getAnhoMoto() {
+        return anhoMoto;
+    }
+
+    public void setAnhoMoto(int anhoMoto) {
+        this.anhoMoto = anhoMoto;
+    }
+    
+
     public String datosMotos(){
-    return "Marca: "+marcaMoto+"/n" +"Modelo: "+modeloMoto+"/n " +"Precio: "+"$"+precioMoto;
+    return "Marca: "+marcaMoto+"\n" +"Modelo: "+modeloMoto+"\n"+
+            "Color: "+colorMoto+"\n"+"Año: "+anhoMoto+"\n"+"Precio: "+"$"+precioMoto;
     }
     
     
