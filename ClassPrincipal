@@ -21,12 +21,11 @@ public class Principal {
     
     public static void main(String[] args) {
        Scanner entrada= new Scanner(System.in);
-       String marca,modelo;
+       String marca,modelo,color;
        float precio;
-       int numCarros,indiceBarato;
+       int numCarros,indiceBarato,anho;
        
-       System.out.println("Bienvenido!"+"/n"+"Este programa calcula el precio del Auto más barato");
-       System.out.println("Este programa calcula el precio del Auto más barato");
+       System.out.println("Bienvenido!"+"\n"+"Este programa calcula el precio del Auto y de la moto mas baratos");
        System.out.print("Digite la cantidad de vehiculos: ");
        numCarros=entrada.nextInt();
        
@@ -35,26 +34,30 @@ public class Principal {
        for(int i=0;i<numCarros;i++){
            entrada.nextLine();
            System.out.println("Digite las caracteristicas del Carro "+(i+1)+":");
-           System.out.print("Introdusca la Marca: ");
+           System.out.print("\n"+"Introdusca la Marca del carro: ");
            marca=entrada.nextLine();
-           System.out.print("Introdusca el Modelo: ");
+           System.out.print("Introdusca el Modelo del carro: ");
            modelo=entrada.nextLine();
-           System.out.print("Introdusca el precio: ");
+           System.out.print("Introdusca el color del carro: ");
+           color=entrada.nextLine();
+           System.out.print("Introdusca el año del carro: ");
+           anho=entrada.nextInt();
+           System.out.print("Introdusca el precio del carro: ");
            precio=entrada.nextFloat();
+         
            
-           vehiculos[i]=new Carros(marca ,modelo ,precio);
+           vehiculos[i]=new Carros(marca ,modelo ,color,precio,anho);
        
        }
        indiceBarato=indiceCarrosMBarato(vehiculos);
-       System.out.println("El coche mas barato es: ");
-       System.out.println(vehiculos[indiceBarato].mostrarDatos());
+    
        
     Scanner entrada2= new Scanner(System.in);
-       String marcaMoto,modeloMoto;
+       String marcaMoto,modeloMoto,colorMoto;
        float precioMoto;
-       int numMotos,indiceBarata;
+       int numMotos,indiceBarata,anhoMoto;
        
-       System.out.print("Digite la cantidad de Motos: ");
+       System.out.print("\n"+"Digite la cantidad de Motos: ");
        numMotos=entrada2.nextInt();
        
        Motos Motocicletas[]= new Motos[numMotos];
@@ -62,19 +65,25 @@ public class Principal {
        for(int i=0;i<numMotos;i++){
            entrada2.nextLine();
            System.out.println("Digite las caracteristicas de la Moto "+(i+1)+":");
-           System.out.print("Introdusca la Marca: ");
+           System.out.print("\n"+"Introdusca la Marca de la moto: ");
            marcaMoto=entrada2.nextLine();
-           System.out.print("Introdusca el Modelo: ");
+           System.out.print("Introdusca el Modelo de la moto: ");
            modeloMoto=entrada2.nextLine();
-           System.out.print("Introdusca el precio: ");
+           System.out.print("Introdusca el color de la moto: ");
+           colorMoto=entrada2.nextLine();
+           System.out.print("Introdusca el año de la moto: ");
+           anhoMoto=entrada2.nextInt();
+           System.out.print("Introdusca el precio de la moto: ");
            precioMoto=entrada2.nextFloat();
            
-           Motocicletas[i]=new Motos(marcaMoto ,modeloMoto ,precioMoto);
+           Motocicletas[i]=new Motos(marcaMoto ,modeloMoto ,colorMoto,anhoMoto,precioMoto);
            
        }
        indiceBarata=indiceMotosBarata(Motocicletas);
-       System.out.println("La moto mas barato es: ");
+       System.out.println("\n"+"La moto mas barata es: ");
        System.out.println(Motocicletas[indiceBarata].datosMotos());
+       System.out.println("\n"+"El coche mas barato es: ");
+       System.out.println(vehiculos[indiceBarato].mostrarDatos());
     }
     
     public static int indiceMotosBarata(Motos Motocicletas[]){
