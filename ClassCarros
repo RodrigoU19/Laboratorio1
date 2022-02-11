@@ -5,12 +5,18 @@ public class Carros {
     private String marca;
     private String modelo;
     private float precio;
+    private int anho;
+    private String color;
+    private String tipo;
+  
 
     //Metodo Constructor:
-    public Carros(String marca, String modelo,float precio) {
+    public Carros(String marca, String modelo,String color,float precio,int anho) {
         this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;
+        this.color=color;
+       this.anho=anho;
     }
 
     public String getMarca() {
@@ -32,9 +38,29 @@ public class Carros {
     public float getPrecio() {
         return precio;
     }
+
+    public int getAnho() {
+        return anho;
+    }
+
+    public void setAnho(int anho) {
+        this.anho = anho;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    
     public String mostrarDatos(){
-    return "Marca: "+marca+"/n " +"Modelo: "+modelo+"/n " +"Precio: "+"$"+precio;
+    return "Marca: "+marca+"\n" +"Modelo: "+modelo+"\n"+"Color: "+color+
+            "\n"+"Año:"+anho+"\n" +"Precio: "+"$"+precio;
     }
     
     
 }
+
