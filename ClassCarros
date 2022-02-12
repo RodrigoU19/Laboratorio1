@@ -1,6 +1,6 @@
 package principal;
 
-
+//Inicializacion de los atributos del objeto
 public class Carros {
     private String marca;
     private String modelo;
@@ -18,7 +18,7 @@ public class Carros {
         this.color=color;
        this.anho=anho;
     }
-
+//Encapsulación de los datos
     public String getMarca() {
         return marca;
     }
@@ -55,12 +55,10 @@ public class Carros {
         this.color = color;
     }
 
-    
+    //Metodo encargado de mostrar en pantalla los datos del auto con el precio más bajo
     public String mostrarDatos(){
-    return "Marca: "+marca+"\n" +"Modelo: "+modelo+"\n"+"Color: "+color+
-            "\n"+"Año:"+anho+"\n" +"Precio: "+"$"+precio;
+    return "Marca: "+marca+"\n" +"Modelo: "+modelo+"\n"+"Color: "+color+ "\n"+"Año:"+anho+"\n" +"Precio: "+"$"+precio;
     }
     
     
 }
-
