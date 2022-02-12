@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Principal {
 
+//A continuación se crea un metodo en el cual se almacenaran los vehiculos ingresados y su precio
+//Calculando así, el vehiculo cuyo precio es el menor de todos.
+
     public static int indiceCarrosMBarato(Carros vehiculos[]){
     float precio;
     int indice=0;
@@ -18,6 +21,7 @@ public class Principal {
     }
     return indice;
     }
+    //Main principal(contiene los diferentes procesos que realizara los respectivos metodos
     
     public static void main(String[] args) {
        Scanner entrada= new Scanner(System.in);
@@ -29,7 +33,11 @@ public class Principal {
        System.out.print("Digite la cantidad de vehiculos: ");
        numCarros=entrada.nextInt();
        
+       //Instanciamiento del objeto llamado "Vehiculos" perteneciente a la clase "Carros"
+       
        Carros vehiculos[]= new Carros[numCarros];
+       
+       //A continuación se pide al usuario que ingrese los registros de los autos que desea almacenar.
        
        for(int i=0;i<numCarros;i++){
            entrada.nextLine();
@@ -49,8 +57,11 @@ public class Principal {
            vehiculos[i]=new Carros(marca ,modelo ,color,precio,anho);
        
        }
+       
        indiceBarato=indiceCarrosMBarato(vehiculos);
     
+       //Luego se repite el mismo proceso donde pide que ingrese los datos pero esta vez de motos.
+       //Almacenandolos en la clase Motos.
        
     Scanner entrada2= new Scanner(System.in);
        String marcaMoto,modeloMoto,colorMoto;
@@ -80,11 +91,17 @@ public class Principal {
            
        }
        indiceBarata=indiceMotosBarata(Motocicletas);
+       
+      //Cuando todos los datos han sido ingresados se mostrara en pantalla el resultado.
+      //Es decir, el auto y moto cuyo precio sea el mas barato, mostrando tambien sus respectivos datos.
+      
        System.out.println("\n"+"La moto mas barata es: ");
        System.out.println(Motocicletas[indiceBarata].datosMotos());
        System.out.println("\n"+"El coche mas barato es: ");
        System.out.println(vehiculos[indiceBarato].mostrarDatos());
     }
+    //A continuación se crea un metodo en el cual se almacenaran las motos ingresadss y su precio
+    //Calculando así, la moto cuyo precio es el menor de todos.
     
     public static int indiceMotosBarata(Motos Motocicletas[]){
     float precio;
