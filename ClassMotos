@@ -1,4 +1,6 @@
 package principal;
+//Inicializacion de los atributos del objeto
+
 public class Motos {
     private String marcaMoto;
     private String modeloMoto;
@@ -7,6 +9,7 @@ public class Motos {
     private int anhoMoto;
 
     //Metodo Constructor:
+    
     public Motos(String marcaMoto, String modeloMoto,String colorMoto,int anhoMoto, float precioMoto) {
         this.marcaMoto = marcaMoto;
         this.modeloMoto = modeloMoto;
@@ -14,6 +17,7 @@ public class Motos {
         this.anhoMoto=anhoMoto;
         this.colorMoto=colorMoto;
     }
+    //Encapsulación de los datos
 
     public String getMarcaMoto() {
         return marcaMoto;
@@ -51,10 +55,10 @@ public class Motos {
         this.anhoMoto = anhoMoto;
     }
     
+//Metodo encargado de mostrar en pantalla los datos de la moto con el precio más bajo
 
     public String datosMotos(){
-    return "Marca: "+marcaMoto+"\n" +"Modelo: "+modeloMoto+"\n"+
-            "Color: "+colorMoto+"\n"+"Año: "+anhoMoto+"\n"+"Precio: "+"$"+precioMoto;
+    return "Marca: "+marcaMoto+"\n" +"Modelo: "+modeloMoto+"\n"+"Color: "+colorMoto+"\n"+"Año: "+anhoMoto+"\n"+"Precio: "+"$"+precioMoto;
     }
     
     
